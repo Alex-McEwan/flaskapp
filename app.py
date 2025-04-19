@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "Levi Lina is een kanker homo en woont in lathum"
+    return "Levi Lina is een kanker homo en woont in duiven"
 
 @app.route('/test')
 def test():
