@@ -20,7 +20,7 @@ jobs:
 
     - name: SSH and deploy
       run: |
-        ssh -o StrictHostKeyChecking=no azureuser@ubuntuserver << 'EOF'
+        ssh -o StrictHostKeyChecking=no azureuser@20.86.134.94 << 'EOF'
           cd /path/to/your/app
           git pull origin main
           docker compose down
