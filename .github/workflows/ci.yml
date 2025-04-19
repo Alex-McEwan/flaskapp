@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  docker-compose-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Compose
+      run: docker compose version
+
+    - name: Build and run services
+      run: docker compose up -d --build
+
+    - name: Wait and test endpoints
+      run: |
+        sleep 5
+        curl --fail http://localhost:5000/ || exit 1
+        curl --fail http://localhost:5000/test || exit 1
+
+    - name: Stop containers
+      run: docker compose down
