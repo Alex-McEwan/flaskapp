@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  set up the server and check if its endpoints are responding:
+  setup-webserver:
     runs-on: ubuntu-latest
 
     steps:
