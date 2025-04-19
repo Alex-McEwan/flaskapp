@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  docker-compose-test:
+  set up the server and check if its endpoints are responding:
     runs-on: ubuntu-latest
 
     steps:
