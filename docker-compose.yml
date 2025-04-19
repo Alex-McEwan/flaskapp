@@ -5,7 +5,7 @@ services:
     build: .
     container_name: python311
     ports:
-      - "5000:5000"
+      - "25565:5000"
     volumes:
       - .:/app
 
